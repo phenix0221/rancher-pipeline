@@ -6,8 +6,19 @@ stages:
       buildContext: .
       tag: nginx:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34831
+    when:
+      event:
+        include:
+        - push
 - name: Deploy
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+    when:
+      event:
+        include:
+        - push
 timeout: 60
+branch:
+  include:
+  - master
