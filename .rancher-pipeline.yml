@@ -13,11 +13,3 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
-    when:
-      event:
-        include:
-        - push
-timeout: 60
-branch:
-  include:
-  - master
