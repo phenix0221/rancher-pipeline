@@ -5,7 +5,6 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: nginx:${CICD_EXECUTION_SEQUENCE}
-      registry: 127.0.0.1:34831
     when:
       event:
         include:
