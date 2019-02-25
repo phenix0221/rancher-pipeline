@@ -4,7 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: nginx:${CICD_EXECUTION_SEQUENCE}
+      tag: nginx:v1
 - name: Deploy
   steps:
   - applyYamlConfig:
